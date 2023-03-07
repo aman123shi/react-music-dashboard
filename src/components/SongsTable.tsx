@@ -13,32 +13,15 @@ import EditSongModal from "./EditSongModal";
 import { useDispatch } from "react-redux";
 import { deleteSong } from "../reduxStore/features/songSlice";
 
-const rows: SongDto[] = [
-  {
-    _id: "1",
-    album: "xo",
-    artist: "Abel",
-    genre: "R&B",
-    title: "Wicked Games",
-  },
-  {
-    _id: "2",
-    album: "vvv",
-    artist: "Abel",
-    genre: "R&B",
-    title: "Wicked Games",
-  },
-];
 type SongsTableProps = {
   songs: SongDto[];
 };
 export default function SongsTable({ songs }: SongsTableProps) {
-  const [editModalShow, setEditModalShow] = useState(false);
-  const [editableSong, setEditableSong] = useState<SongDto>();
   const dispatch = useDispatch();
   const _deleteSong = (id: string) => {
     dispatch(deleteSong(id));
   };
+
   return (
     <TableContainer component={Paper}>
       <CreateSongModal />
@@ -73,7 +56,7 @@ export default function SongsTable({ songs }: SongsTableProps) {
               <TableCell align="center">
                 <Button
                   variant="contained"
-                  color="warning"
+                  color="error"
                   onClick={() => _deleteSong(row._id || "")}
                 >
                   Delete

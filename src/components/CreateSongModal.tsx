@@ -5,27 +5,13 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import TextField from "@mui/material/TextField";
 import { SongDto } from "../types/songTypes";
-import { CircularProgress } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { addNewSong } from "../reduxStore/features/songSlice";
-
-const style = {
-  position: "absolute" as "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  height: 450,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
+import { style } from "./createSongModal.styles";
 
 export default function CreateSongModal() {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
-
   const [song, setSong] = useState<SongDto>({
     album: "",
     artist: "",
