@@ -18,6 +18,7 @@ import {
   updateSong,
   updateSongSuccess,
 } from "../features/songSlice";
+import { showErrorToast, showSuccessToast } from "../../utils/toastHelpers";
 
 function* getSongsAsync() {
   try {
@@ -25,6 +26,7 @@ function* getSongsAsync() {
     yield put(getSongsSuccess(songs));
   } catch (error) {
     yield put(setError("Error Fetching Songs"));
+    showErrorToast();
   }
 }
 
@@ -37,8 +39,10 @@ function* createSongAsync({ payload }: PayloadAction<SongDto>) {
     const songPayload = payload;
     const song: SongDto = yield call(createNewSongToServer, songPayload);
     yield put(addNewSongSuccess(song));
+    showSuccessToast("Song Added Success");
   } catch (error) {
     yield put(setError("Error Create Songs"));
+    showErrorToast();
   }
 }
 
@@ -51,8 +55,10 @@ function* updateSongAsync({ payload }: PayloadAction<Partial<SongDto>>) {
     const songPayload = payload;
     const song: SongDto = yield call(updateSongToServer, songPayload);
     yield put(updateSongSuccess(song));
+    showSuccessToast("Song Update Success");
   } catch (error) {
     yield put(setError("Error Update Song"));
+    showErrorToast();
   }
 }
 
@@ -65,8 +71,10 @@ function* deleteSongAsync({ payload }: PayloadAction<string>) {
     const songId = payload;
     const song: SongDto = yield call(deleteSongToServer, songId);
     yield put(deleteSongSuccess(song));
+    showSuccessToast("Song Delete Success");
   } catch (error) {
     yield put(setError("Error Update Song"));
+    showErrorToast();
   }
 }
 
