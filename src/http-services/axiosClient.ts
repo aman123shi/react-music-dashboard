@@ -1,7 +1,7 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, { AxiosResponse } from "axios";
 
 const axiosClient = axios.create({
-  baseURL: "http://localhost:4000/api",
+  baseURL: "https://music-backend-cntq.onrender.com/api",
   headers: {
     "Content-Type": "application/json",
   },
@@ -20,4 +20,4 @@ axiosClient.interceptors.response.use(
     return Promise.reject(error);
   }
 );
-export default axiosClient;
+export default axiosClient; //

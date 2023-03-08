@@ -30,6 +30,7 @@ export default function CreateSongModal() {
     e.preventDefault();
     dispatch(addNewSong(song));
   };
+
   return (
     <div>
       <Button variant="contained" color="primary" onClick={handleOpen}>
