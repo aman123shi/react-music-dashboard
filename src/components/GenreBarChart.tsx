@@ -9,7 +9,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { GenreBarChartDto, GenreSongCountDto } from "../types/songTypes";
+import { GenreSongCountDto } from "../types/songTypes";
 type GenreBarChartProps = {
   data: GenreSongCountDto[];
 };

@@ -21,17 +21,17 @@ export const notificationSlice = createSlice({
   name: "song",
   initialState,
   reducers: {
-    addNewSong: (state, action: PayloadAction<SongDto>) => {
+    addNewSong: (state, _action: PayloadAction<SongDto>) => {
       state.loading = true;
     },
-    updateSong: (state, action: PayloadAction<Partial<SongDto>>) => {
+    updateSong: (state, _action: PayloadAction<Partial<SongDto>>) => {
       state.loading = true;
     },
     getSongs: (state) => {
       state.loading = true;
     },
 
-    deleteSong: (state, action: PayloadAction<string>) => {
+    deleteSong: (state, _action: PayloadAction<string>) => {
       state.loading = true;
     },
     addNewSongSuccess: (state, action: PayloadAction<SongDto>) => {

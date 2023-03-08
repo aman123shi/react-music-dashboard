@@ -8,17 +8,6 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { AlbumSongCountDto } from "../types/songTypes";
 
-function createData(name: string, totalSongs: number) {
-  return { album: name, totalSongs };
-}
-
-const rows = [
-  createData("Frozen yoghurt", 159),
-  createData("Ice cream sandwich", 237),
-  createData("Eclair", 262),
-  createData("Cupcake", 305),
-  createData("Gingerbread", 356),
-];
 type AlbumsTableProp = {
   albumStat: AlbumSongCountDto[];
 };

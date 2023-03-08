@@ -9,19 +9,8 @@ import { CircularProgress } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../reduxStore/index";
 import { updateSong } from "../reduxStore/features/songSlice";
+import { style } from "./modal.styles";
 
-const style = {
-  position: "absolute" as "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  height: 450,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
 type EditSongProp = {
   song: SongDto;
 };

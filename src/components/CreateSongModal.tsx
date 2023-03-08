@@ -7,9 +7,7 @@ import TextField from "@mui/material/TextField";
 import { SongDto } from "../types/songTypes";
 import { useDispatch } from "react-redux";
 import { addNewSong } from "../reduxStore/features/songSlice";
-import { style } from "./createSongModal.styles";
-import IconButton from "@mui/material/IconButton";
-import Icon from "@mui/material/Icon";
+import { style } from "./modal.styles";
 
 export default function CreateSongModal() {
   const dispatch = useDispatch();

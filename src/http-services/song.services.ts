@@ -17,8 +17,6 @@ export const createNewSongToServer = (song: SongDto): Promise<SongDto> => {
 export const updateSongToServer = (song: partialOfSong): Promise<SongDto> => {
   if (!song._id) return Promise.reject("song Id must be Provided");
 
-  console.log(song._id);
-
   const result = axiosClient.put(
     `/songs/${song._id}`,
     song
